@@ -3,7 +3,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CollectionsPreview from "@/components/CollectionsPreview";
 import About from "@/components/About";
-import Sustainability from "@/components/Sustainability";
+import Partners from "@/components/Partners";
+import Awards from "@/components/Awards";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -12,7 +14,9 @@ const Index = () => {
       <Hero />
       <CollectionsPreview />
       <About />
-      <Sustainability />
+      <Partners />
+      <Awards />
+      <Footer />
     </div>
   );
 };
