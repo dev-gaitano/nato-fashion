@@ -16,12 +16,32 @@ const Partners = () => {
       description: "Fair trade certification",
       role: "Certification Partner",
     },
+    {
+      name: "Tech Solutions Inc",
+      description: "Digital innovation partner",
+      role: "Technology Partner",
+    },
+    {
+      name: "Green Logistics",
+      description: "Sustainable shipping solutions",
+      role: "Logistics Partner",
+    },
+    {
+      name: "Design Studio X",
+      description: "Creative design agency",
+      role: "Design Partner",
+    },
+    {
+      name: "Ethical Manufacturing Co",
+      description: "Responsible production facility",
+      role: "Manufacturing Partner",
+    },
   ];
 
   return (
     <section id="partners" className="py-20 bg-nato-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
               Our <span className="gold-gradient">Partners</span>
@@ -31,7 +51,7 @@ const Partners = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {partners.map((partner) => (
               <div
                 key={partner.name}
