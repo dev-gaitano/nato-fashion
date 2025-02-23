@@ -5,6 +5,7 @@ import CollectionsPreview from "@/components/CollectionsPreview";
 import About from "@/components/About";
 import Partners from "@/components/Partners";
 import Awards from "@/components/Awards";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <CollectionsPreview />
       <About />
       <Partners />
+      <Testimonials />
       <Awards />
       <Footer />
     </div>
