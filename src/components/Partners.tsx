@@ -3,37 +3,37 @@ const Partners = () => {
   const partners = [
     {
       name: "Sustainable Textiles Co",
-      description: "Eco-friendly fabric supplier",
+      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=200&q=80",
       role: "Material Partner",
     },
     {
       name: "African Artisans United",
-      description: "Master craftspeople collective",
+      logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200&q=80",
       role: "Craftsmanship Partner",
     },
     {
       name: "Global Fashion Ethics",
-      description: "Fair trade certification",
+      logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=200&q=80",
       role: "Certification Partner",
     },
     {
       name: "Tech Solutions Inc",
-      description: "Digital innovation partner",
+      logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=200&q=80",
       role: "Technology Partner",
     },
     {
       name: "Green Logistics",
-      description: "Sustainable shipping solutions",
+      logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
       role: "Logistics Partner",
     },
     {
       name: "Design Studio X",
-      description: "Creative design agency",
+      logo: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=200&q=80",
       role: "Design Partner",
     },
     {
       name: "Ethical Manufacturing Co",
-      description: "Responsible production facility",
+      logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=200&q=80",
       role: "Manufacturing Partner",
     },
   ];
@@ -51,17 +51,22 @@ const Partners = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="flex flex-nowrap overflow-x-auto gap-8 py-4 px-2 -mx-2 items-center justify-between">
             {partners.map((partner) => (
               <div
                 key={partner.name}
-                className="glass-card p-6 rounded-xl hover-lift text-center"
+                className="flex flex-col items-center space-y-3 min-w-[120px]"
               >
-                <h3 className="text-xl font-heading font-medium mb-2">
-                  {partner.name}
-                </h3>
-                <p className="text-nato-400 text-sm mb-3">{partner.role}</p>
-                <p className="text-gray-600">{partner.description}</p>
+                <div className="w-[120px] h-[80px] relative glass-card p-4 rounded-lg hover-lift flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-w-full max-h-full object-contain mix-blend-multiply filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+                <p className="text-nato-400 text-xs text-center whitespace-nowrap">
+                  {partner.role}
+                </p>
               </div>
             ))}
           </div>
