@@ -5,10 +5,13 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showOffersBar, setShowOffersBar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrolled = window.scrollY > 20;
+      setIsScrolled(scrolled);
+      setShowOffersBar(scrolled && window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -17,8 +20,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm mt-[40px]" : "bg-transparent"
-      }`}
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+      } ${showOffersBar ? "mt-[40px]" : ""}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">

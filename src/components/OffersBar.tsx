@@ -21,6 +21,18 @@ const offers = [
   }
 ];
 
+export const useOffersBarState = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+  
+  return {
+    isVisible,
+    setIsVisible,
+    isDismissed,
+    setIsDismissed
+  };
+};
+
 const OffersBar = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
