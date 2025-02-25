@@ -1,9 +1,8 @@
-
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative flex items-center justify-center overflow-hidden pt-16">
+    <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden pt-16">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#f3e8e2_0%,_transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_#d2bab0_0%,_transparent_50%)]" />

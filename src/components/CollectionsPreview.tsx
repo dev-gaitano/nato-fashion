@@ -1,4 +1,3 @@
-
 const CollectionsPreview = () => {
   const latestArrivals = [
     {
@@ -19,7 +18,7 @@ const CollectionsPreview = () => {
   ];
 
   return (
-    <section id="latest-arrivals" className="py-20 relative overflow-hidden">
+    <section id="collections" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
