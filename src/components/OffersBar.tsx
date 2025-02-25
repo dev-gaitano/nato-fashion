@@ -25,19 +25,6 @@ export const useOffersBarState = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   
-  return {
-    isVisible,
-    setIsVisible,
-    isDismissed,
-    setIsDismissed
-  };
-};
-
-const OffersBar = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
-  const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       if (!isDismissed) {
@@ -48,6 +35,18 @@ const OffersBar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isDismissed]);
+
+  return {
+    isVisible,
+    setIsVisible,
+    isDismissed,
+    setIsDismissed
+  };
+};
+
+const OffersBar = () => {
+  const { isVisible, isDismissed, setIsDismissed } = useOffersBarState();
+  const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {

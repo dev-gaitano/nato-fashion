@@ -1,17 +1,17 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useOffersBarState } from "./OffersBar";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showOffersBar, setShowOffersBar] = useState(false);
+  const { isVisible: showOffersBar, isDismissed } = useOffersBarState();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 20;
       setIsScrolled(scrolled);
-      setShowOffersBar(scrolled && window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
-      } ${showOffersBar ? "mt-[40px]" : ""}`}
+      } ${showOffersBar && !isDismissed ? "mt-[40px]" : ""}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
